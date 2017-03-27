@@ -4,7 +4,7 @@ module.exports = ($el) => {
 
   require.ensure([], (require) => {
 
-    var Module = require('./componentReveal.main');
+    let Module = require('./componentReveal.main');
     new Module($el);
 
   });

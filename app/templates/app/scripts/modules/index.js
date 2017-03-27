@@ -1,5 +1,6 @@
 'use strict';
-var $ = require('jquery');
+
+import $ from 'jquery';
 
 module.exports = {
   init: function() {

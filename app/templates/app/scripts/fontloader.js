@@ -1,12 +1,12 @@
 'use strict';
 
 //This particular flavor also includes a tiny Promise shim for cross-browser compatibility
-var FontFaceObserver = require('fontfaceobserver/fontfaceobserver.js');
-var html = document.documentElement;
+import FontFaceObserver from 'fontfaceobserver/fontfaceobserver.js';
+const html = document.documentElement;
 
 // Replace these with your project web fonts
-var normal = new FontFaceObserver('Roboto');
-var bold = new FontFaceObserver('Roboto', {
+const normal = new FontFaceObserver('Roboto');
+const bold = new FontFaceObserver('Roboto', {
   'font-weight': 700
 });
 

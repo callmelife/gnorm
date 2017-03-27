@@ -1,20 +1,20 @@
 'use strict';
 
-var _ = require('underscore');
-var argv = require('yargs').argv;
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var modify = require('gulp-modify');
-var prettify = require('gulp-jsbeautifier');
-var rename = require('gulp-rename');
-var template = require('gulp-template');
-var util = {
+const _ = require('underscore');
+const argv = require('yargs').argv;
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const modify = require('gulp-modify');
+const prettify = require('gulp-jsbeautifier');
+const rename = require('gulp-rename');
+const template = require('gulp-template');
+const util = {
   capitalizeFirstLetter: function(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   },
   checkIfExists: function(arr, name) {
-    var exists = false;
-    var regEx = new RegExp(name + '.*', 'gi');
+    let exists = false;
+    let regEx = new RegExp(name + '.*', 'gi');
     arr.forEach(function(v) {
       if (v.match(regEx)) {
         exists = true;
@@ -31,7 +31,7 @@ var util = {
     return string.match(/(modules+[:\s]*{)([\w\s\r\t\/:()'".,]*)*(})/g);
   },
   sanitizeArray: function(arr) {
-    var newArr = [];
+    let newArr = [];
     arr.forEach(function(v, i) {
       newArr.push(v.replace(/\s/g, ''));
     });
@@ -53,16 +53,16 @@ gulp.task('create-module', function() {
       fileModifier: function(file, contents) {
 
         // Get the file content
-        var content = contents.toString();
+        let content = contents.toString();
 
         // Extract the object that contains module references
-        var modulesObj = util.getModulesObject(content);
+        let modulesObj = util.getModulesObject(content);
 
         // Add each module definitation to an array.
-        var modulesArr = util.getArrayofModules(modulesObj);
+        let modulesArr = util.getArrayofModules(modulesObj);
 
         // Sanitize every item in that aray (spaces, tabs, breaks).
-        var modulesArrSanitized = util.sanitizeArray(modulesArr);
+        let modulesArrSanitized = util.sanitizeArray(modulesArr);
 
         // If it's the first module, then make sure the array is empty
         if(modulesArrSanitized[0] === ''){
@@ -70,7 +70,7 @@ gulp.task('create-module', function() {
 
         // Check to make sure module doesn't exist already
         } else if (util.checkIfExists(modulesArrSanitized, argv.name)) {
-          var err = new gutil.PluginError('template', 'The module "' +
+          let err = new gutil.PluginError('template', 'The module "' +
             argv.name +
             '" already exists. Please choose a unique module name.'
           );
