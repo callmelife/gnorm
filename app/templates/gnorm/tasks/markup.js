@@ -1,6 +1,6 @@
-var gulp = require('gulp'),
-    include = require('gulp-include'),
-    config = require('../config').markup;
+const gulp = require('gulp');
+const include = require('gulp-include');
+const config = require('../config').markup;
 
 gulp.task('markup', function() {
   return gulp.src(config.src)

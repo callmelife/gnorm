@@ -1,4 +1,4 @@
-var gulp = require('gulp');
+const gulp = require('gulp');
 
 //Builds dev and starts browsersync
 gulp.task('default', ['watch']);

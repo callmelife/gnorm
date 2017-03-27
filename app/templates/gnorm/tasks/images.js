@@ -1,10 +1,10 @@
-var gulp = require('gulp'),
-    changed = require('gulp-changed'),
-    config = require('../config').images,
-    imagemin = require('gulp-imagemin'),
-    imageminMozjpeg = require('imagemin-mozjpeg'),
-    pngquant = require('imagemin-pngquant');
-
+const gulp = require('gulp');
+const changed = require('gulp-changed');
+const config = require('../config').images;
+const imagemin = require('gulp-imagemin');
+const imageminMozjpeg = require('imagemin-mozjpeg');
+const pngquant = require('imagemin-pngquant');
+    
 gulp.task('images', function() {
   return gulp.src(config.src)
     .pipe(changed(config.dest))

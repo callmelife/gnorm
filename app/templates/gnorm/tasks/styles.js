@@ -1,15 +1,14 @@
-var gulp = require('gulp'),
-    autoprefixer = require('autoprefixer'),
-    browserSync = require('browser-sync'),
-    config = require('../config').styles,
-    gulpif = require('gulp-if'),
-    nano = require('gulp-cssnano'),
-    plumber = require('gulp-plumber'),
-    postcss = require('gulp-postcss'),
-    sass = require('gulp-sass'),
-    sassGlob = require('gulp-sass-glob'),
-    sourcemaps = require('gulp-sourcemaps');
-
+const gulp = require('gulp');
+const autoprefixer = require('autoprefixer');
+const browserSync = require('browser-sync');
+const config = require('../config').styles;
+const gulpif = require('gulp-if');
+const nano = require('gulp-cssnano');
+const plumber = require('gulp-plumber');
+const postcss = require('gulp-postcss');
+const sass = require('gulp-sass');
+const sassGlob = require('gulp-sass-glob');
+const sourcemaps = require('gulp-sourcemaps');
 
 var processors = [
       autoprefixer({

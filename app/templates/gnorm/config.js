@@ -1,5 +1,5 @@
-var dest = './build';
-var src = './app';
+const dest = './build';
+const src = './app';
 
 module.exports = {
   app: './app',

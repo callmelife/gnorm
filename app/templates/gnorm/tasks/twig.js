@@ -1,8 +1,8 @@
-var gulp = require('gulp'),
-    data = require('gulp-data'),
-    twig = require('gulp-twig'),
-    path = require('path'),
-    config = require('../config').twig;
+const gulp = require('gulp');
+const data = require('gulp-data');
+const twig = require('gulp-twig');
+const path = require('path');
+const config = require('../config').twig;
 
 gulp.task('twig', function () {
     'use strict';

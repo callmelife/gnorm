@@ -1,8 +1,8 @@
 'use strict';
 
-var changed = require('gulp-changed');
-var config = require('../config');
-var gulp = require('gulp');
+const changed = require('gulp-changed');
+const config = require('../config');
+const gulp = require('gulp');
 
 gulp.task('copy', ['copy:scripts', 'copy:fonts', 'copy:favicon']);
 
