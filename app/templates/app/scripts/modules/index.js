@@ -3,12 +3,13 @@
 import $ from 'jquery';
 
 module.exports = {
-  init: function() {
+  init: () => {
     $('[data-module]').each((i, v) => {
-      let name = $(v).data('module');
-      this.modules[name]($(v));
+      this.name = $(v).data('module');
+      this.module = this.modules[this.name]($(v));
     });
   },
+  
   modules: {
     componentReveal: require('./componentReveal/componentReveal.load')
   }
