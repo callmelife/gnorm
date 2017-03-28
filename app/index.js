@@ -93,10 +93,10 @@ module.exports = generators.Base.extend({
 			this.destinationPath('.jsbeautifyrc')
 		);
 
-		// copy jshintrc
+		// copy eslintrc
 		this.fs.copy(
-			this.templatePath('_jshintrc'),
-			this.destinationPath('.jshintrc')
+			this.templatePath('_eslintrc'),
+			this.destinationPath('.eslintrc')
 		);
 
 		// copy gulpfile.js
