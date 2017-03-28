@@ -1,7 +1,5 @@
 'use strict';
 
-import $ from 'jquery';
-
 module.exports = class ComponentReveal {
   constructor($el) {
     this.host = window.location.host;
